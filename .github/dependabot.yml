@@ -1,7 +1,21 @@
 version: 2
 updates:
-  # Maintain dependencies for GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
-      interval: "monthly"
+      interval: weekly
+
+  - package-ecosystem: docker
+    directory: /vote
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: docker
+    directory: /result
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: docker
+    directory: /worker
+    schedule:
+      interval: weekly
